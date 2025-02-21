@@ -3,9 +3,13 @@
 @section('content')
 <div class="container">
     <div class="profile-header">
-        <img src="{{ asset('images/default-icon.png') }}" alt="User Icon" class="profile-icon">
-        <h2>{{ Auth::user()->name }}</h2>
-        <p>お酒の強さ: ★★★★☆</p>
+        <img src="{{ asset('images/default_icon.png') }}" alt="User Icon" class="profile-icon">
+        <h2 class="user-name">{{ Auth::user()->name }}</h2>
+
+    </div>
+
+    <div>
+    <p>お酒の強さ: ★★★★☆</p>
     </div>
 
     <div class="favorite-drinks">
