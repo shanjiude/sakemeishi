@@ -3,7 +3,9 @@ body {
     font-family: Arial, sans-serif;
 }
 .container {
-    margin-top: 50px;
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
 }
 .btn {
     display: inline-block;
@@ -13,4 +15,31 @@ body {
     background-color: #ff9900;
     color: white;
     border-radius: 5px;
+}
+.profile-header {
+    padding: 20px;
+    background: #f8f8f8;
+    border-radius: 10px;
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.favorite-drinks, .drink-list {
+    margin-top: 20px;
+    padding: 10px;
+    background: #fff5e1;
+    border-radius: 10px;
+}
+
+.drink-tags span {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    background: #ffcc66;
+    border-radius: 20px;
 }
