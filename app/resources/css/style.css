@@ -52,6 +52,21 @@ body {
     object-fit: cover;
 }
 
+.user-name {
+    line-height: 40px;
+}
+
+.user-others {
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+.alcohol-strength {
+    line-height: 40px;
+    padding-left: 50px;
+}
+
 .favorite-drinks, .drink-list {
     margin-top: 20px;
     padding: 10px;
@@ -59,19 +74,33 @@ body {
     border-radius: 10px;
 }
 
-.drink-tags span {
-    display: inline-block;
-    padding: 5px 10px;
-    margin: 5px;
-    background: #ffcc66;
-    border-radius: 20px;
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
 }
-
-.profile-edit-button {
-    display: inline-block;
+.profile-edit-button, .ID-search-button {
+    width: 250px;
     padding: 5px 10px;
     margin: 5px;
     color: white;
     background: gray;
     border-radius: 20px;
+}
+.profile-edit-button a, .ID-search-button a {
+    display: block;
+    text-decoration: none;
+}
+
+.drink-tags-1 {
+    display: flex;
+    justify-content: center;
+}
+.drink-tags-2 {
+    justify-content: center;
+    display: flex;
+}
+.sake-icon {
+    width: 100px;
 }
