@@ -56,4 +56,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(UserSodaPreference::class);
     }
+
+    public function alcoholPreference()
+    {
+        return $this->hasMany(UserAlcoholPreference::class);
+    }
 }

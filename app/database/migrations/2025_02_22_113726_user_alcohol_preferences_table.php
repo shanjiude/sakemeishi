@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('alcohol_type_id')->constrained()->onDelete('cascade');
-            $table->enum('preference', ['like', 'neutral', 'dislike']);
+            $table->enum('preference', ['好き', '普通', '嫌い']);
             $table->timestamps();
         });
     }

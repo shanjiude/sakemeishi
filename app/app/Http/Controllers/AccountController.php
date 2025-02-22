@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\AlcoholType;
 use Illuminate\Support\Facades\Auth;
 
 class AccountController extends Controller
@@ -11,8 +12,10 @@ class AccountController extends Controller
     public function show()
     {
         $user = Auth::user();
+        $alcoholTypes = AlcoholType::all();
         return view('account.index', [
             'user' => $user,
+            'alcoholTypes' => $alcoholTypes,
             'alcoholStrength' => $user->alcoholStrength,
             'sodaPreference' => $user->sodaPreference
         ]);
@@ -21,9 +24,11 @@ class AccountController extends Controller
     public function edit()
     {
         $user = Auth::user()->load(['alcoholStrength', 'sodaPreference']);
+        $alcoholTypes = AlcoholType::all();
 
         return view('account.edit', [
             'user' => $user,
+            'alcoholTypes' => $alcoholTypes,
             'alcoholStrength' => $user->alcoholStrength->strength ?? 0, // nullなら0を設定
             'sodaPreference' => $user->sodaPreference->preference ?? '可' // nullなら"可"を設定
         ]);
@@ -32,11 +37,13 @@ class AccountController extends Controller
     public function update(Request $request)
     {
         $user = Auth::user();
+        $alcoholTypes = AlcoholType::all();
 
         $request->validate([
             'name' => 'required|string|max:255',
             'alcohol_strength' => 'required|integer|min:0|max:5',
             'soda_preference' => 'required|in:可,不可',
+            'alcohol_preferences' => 'array',
         ]);
 
         // usersテーブルの情報を更新
@@ -53,6 +60,18 @@ class AccountController extends Controller
             ['user_id' => $user->id],
             ['preference' => $request->soda_preference]
         );
+
+        $user->alcoholPreference()->delete();
+        if ($request->has('alcohol_preferences')) {
+            foreach ($request->alcohol_preferences as $alcoholTypeId => $data) {
+                if (!empty($data['selected'])) {
+                    $user->alcoholPreference()->create([
+                        'alcohol_type_id' => $alcoholTypeId,
+                        'preference' => $data['preference'] ?? '普通', // 選択なしなら "普通" をデフォルト
+                    ]);
+                }
+            }
+        }
 
         return redirect()->route('account')->with('success', 'プロフィールを更新しました。');
     }

@@ -94,16 +94,22 @@ body {
     text-decoration: none;
 }
 
-.drink-tags-1 {
+.drink-tags {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.drink-tags-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.drink-tags-1 {
     justify-content: center;
 }
 .drink-tags-2 {
     justify-content: center;
-    display: flex;
-}
-.sake-icon {
-    width: 100px;
 }
 
 .form-group {
@@ -168,4 +174,22 @@ button:hover {
     border-radius: 5px;
     margin-bottom: 10px;
     text-align: center;
+}
+
+.sake-icon {
+    width: 100px;
+    height: 120px;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.unselected {
+    opacity: 0.4; /* 選択されていないものは半透明 */
+}
+
+input[type="checkbox"] {
+    display: none; /* チェックボックスを非表示 */
+}
+
+input[type="checkbox"]:checked + .sake-icon {
+    opacity: 1; /* 選択されたものは通常表示 */
 }

@@ -13,9 +13,22 @@ class AlcoholTypesSeeder extends Seeder
      */
     public function run(): void
     {
-        $alcohols = ['ビール', '日本酒', '焼酎', 'ウィスキー', '赤ワイン', '白ワイン'];
+        $alcohols = [
+            ['name' => 'ビール', 'image_path' => 'beer.png'],
+            ['name' => '日本酒', 'image_path' => 'nihonsyu.png'],
+            ['name' => '焼酎', 'image_path' => 'syouchu.png'],
+            ['name' => 'ウィスキー', 'image_path' => 'whisky.png'],
+            ['name' => '赤ワイン', 'image_path' => 'wine.png'],
+            ['name' => '白ワイン', 'image_path' => 'white_wine.png'],
+        ];
+
         foreach ($alcohols as $alcohol) {
-            DB::table('alcohol_types')->insert(['name' => $alcohol]);
+            DB::table('alcohol_types')->insert([
+                'name' => $alcohol['name'],
+                'image_path' => $alcohol['image_path'],
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
         }
     }
 }

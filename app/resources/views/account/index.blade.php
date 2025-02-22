@@ -21,15 +21,19 @@
 
     <div class="favorite-drinks">
         <h3>好きなお酒の種類</h3>
-        <div class="drink-tags-1">
-            <img src="{{ asset('images/beer.png') }}" alt="beer Icon" class="sake-icon">
-            <img src="{{ asset('images/syouchu.png') }}" alt="syouchu Icon" class="sake-icon">
-            <img src="{{ asset('images/whisky.png') }}" alt="whisky Icon" class="sake-icon">
-        </div>
-        <div class="drink-tags-2">
-            <img src="{{ asset('images/nihonsyu.png') }}" alt="nihonsyu Icon" class="sake-icon">
-            <img src="{{ asset('images/wine.png') }}" alt="redwine Icon" class="sake-icon">
-            <img src="{{ asset('images/white_wine.png') }}" alt="whitewine Icon" class="sake-icon">
+        <div class="favorite-drinks">
+            <div class="drink-tags">
+                @forelse($user->alcoholPreference as $preference)
+                    <div class="drink-item">
+                        <img src="{{ asset('images/' . $preference->alcoholType->image_path) }}"
+                             alt="{{ $preference->alcoholType->name }} Icon"
+                             class="sake-icon">
+                        <span class="drink-name">{{ $preference->alcoholType->name }}</span>
+                    </div>
+                @empty
+                    <p>まだ登録されていません</p>
+                @endforelse
+            </div>
         </div>
     </div>
 
