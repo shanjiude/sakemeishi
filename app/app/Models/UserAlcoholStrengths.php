@@ -2,16 +2,15 @@
 
 namespace App\Models;
 
-
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class UserSodaPreference extends Model
+class UserAlcoholStrengths extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'soda_preference'];
+    protected $fillable = ['user_id', 'strength'];
 
     public function user(): BelongsTo
     {

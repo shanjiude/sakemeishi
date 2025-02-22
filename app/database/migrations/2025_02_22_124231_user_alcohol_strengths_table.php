@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('user_alcohol_strengths', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->tinyInteger('strength')->unsigned()->comment('お酒の強さ（1:弱い 〜 5:強い）');
+            $table->tinyInteger('strength')->unsigned();
             $table->timestamps();
         });
     }

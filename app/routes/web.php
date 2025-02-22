@@ -6,7 +6,12 @@ use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/account', [AccountController::class, 'show'])->name('account')->middleware('auth');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/account', [AccountController::class, 'show'])->name('account'); // 自分のプロフィール
+    Route::get('/account/edit', [AccountController::class, 'edit'])->name('account.edit'); // プロフィール編集
+    Route::patch('/account/update', [AccountController::class, 'update'])->name('account.update');
+    Route::get('/account/{user}', [AccountController::class, 'showOther'])->name('account.showOther'); // 他人のプロフィール
+});
 
 
 Route::get('/dashboard', function () {

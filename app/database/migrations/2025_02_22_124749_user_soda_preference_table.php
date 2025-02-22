@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('user_soda_preferences', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // ユーザーID
-            $table->enum('soda_preference', ['like', 'neutral', 'dislike'])->default('neutral'); // 炭酸の好み
+            $table->enum('soda_preference', ['可',  '不可'])->default('可'); // 炭酸の好み
             $table->timestamps();
         });
     }

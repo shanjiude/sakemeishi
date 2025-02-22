@@ -6,16 +6,17 @@
         <div class="user-head">
         <img src="{{ asset('images/default_icon.png') }}" alt="User Icon" class="profile-icon">
         </div>
-        <h2 class="user-name">{{ Auth::user()->name }}</h2>
+        <h2 class="user-name">{{ $user->name }}</h2>
         <div class="user-others">
         <div class="alcohol-strength">
             <p>お酒の強さ: ★★★★☆</p>
+            <p>炭酸の可否: 可</p>
         </div>
         </div>
     </div>
 
     <div class="user-id">
-        <p>ID : xxxxx</p>
+        <p>ID : {{ str_pad($user->id, 5, '0', STR_PAD_LEFT) }}</p>
     </div>
 
     <div class="favorite-drinks">
@@ -40,11 +41,11 @@
             <li>🍺 プレミアムモルツ - サントリー</li>
         </ul>
     </div>
-    <div class="button-container">
-    <div class="profile-edit-button">
-        <a href="#">プロフィール編集</a>
+    <div class="other-container">
+    <div class="profile-edit">
+        <a href="{{ route('account.edit') }}">プロフィール編集</a>
     </div>
-    <div class="ID-search-button">
+    <div class="ID-search">
         <a href="#">ID検索</a>
     </div>
     </div>
