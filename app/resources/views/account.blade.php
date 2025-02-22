@@ -5,7 +5,6 @@
     <div class="profile-header">
         <img src="{{ asset('images/default_icon.png') }}" alt="User Icon" class="profile-icon">
         <h2 class="user-name">{{ Auth::user()->name }}</h2>
-
     </div>
 
     <div>
@@ -28,6 +27,9 @@
             <li>🍸 カクテル XYZ - バーオリジナル</li>
             <li>🍺 プレミアムモルツ - サントリー</li>
         </ul>
+    </div>
+    <div class="profile-edit-button">
+        <a href="#">プロフィール編集</a>
     </div>
 </div>
 @endsection

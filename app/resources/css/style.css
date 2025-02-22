@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
 }
 #Hd {
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* ポップなグラデーション */
+    background: linear-gradient(135deg, orange, #fad0c4); /* ポップなグラデーション */
     padding: 20px;
     text-align: center;
     border-radius: 15px;
@@ -64,5 +64,14 @@ body {
     padding: 5px 10px;
     margin: 5px;
     background: #ffcc66;
+    border-radius: 20px;
+}
+
+.profile-edit-button {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 5px;
+    color: white;
+    background: gray;
     border-radius: 20px;
 }
