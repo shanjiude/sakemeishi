@@ -59,6 +59,6 @@ class User extends Authenticatable
 
     public function alcoholPreference()
     {
-        return $this->hasMany(UserAlcoholPreference::class);
+        return $this->hasMany(UserAlcoholPreference::class, 'user_id');
     }
 }

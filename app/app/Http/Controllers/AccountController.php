@@ -58,18 +58,16 @@ class AccountController extends Controller
         // 炭酸の可否を更新
         $user->sodaPreference()->updateOrCreate(
             ['user_id' => $user->id],
-            ['preference' => $request->soda_preference]
+            ['soda_preference' => $request->soda_preference]
         );
 
         $user->alcoholPreference()->delete();
         if ($request->has('alcohol_preferences')) {
             foreach ($request->alcohol_preferences as $alcoholTypeId => $data) {
-                if (!empty($data['selected'])) {
-                    $user->alcoholPreference()->create([
-                        'alcohol_type_id' => $alcoholTypeId,
-                        'preference' => $data['preference'] ?? '普通', // 選択なしなら "普通" をデフォルト
-                    ]);
-                }
+                $user->alcoholPreference()->updateOrCreate(
+                    ['user_id' => $user->id, 'alcohol_type_id' => $alcoholTypeId],
+                    ['preference' => $data['preference'] ?? '普通']
+                );
             }
         }
 

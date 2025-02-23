@@ -26,8 +26,8 @@
 
         <label for="soda_preference">炭酸の可否:</label>
         <select name="soda_preference">
-            <option value="可" {{ old('soda_preference', $user->sodaPreference->preference ?? '可') == '可' ? 'selected' : '' }}>可</option>
-            <option value="不可" {{ old('soda_preference', $user->sodaPreference->preference ?? '可') == '不可' ? 'selected' : '' }}>不可</option>
+            <option value="可" {{ old('soda_preference', $user->sodaPreference->soda_preference ?? '可') == '可' ? 'selected' : '' }}>可</option>
+            <option value="不可" {{ old('soda_preference', $user->sodaPreference->soda_preference ?? '可') == '不可' ? 'selected' : '' }}>不可</option>
         </select>
 
         <label>好きなお酒の種類:</label>
@@ -44,6 +44,7 @@
                                 <img src="{{ asset('images/' . $alcohol->image_path) }}"
                                      alt="{{ $alcohol->name }} Icon"
                                      class="sake-icon {{ $preference ? '' : 'unselected' }}">
+                                <span class="drink-name">{{ $alcohol->name }}</span>
                             </label>
 
                             <!-- お酒の好み（ラジオボタン） -->

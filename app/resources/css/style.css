@@ -144,10 +144,6 @@ select {
     transition: 0.3s;
 }
 
-button:hover {
-    background-color: #45a049;
-}
-
 .button-container {
     text-align: center;
     margin-top: 15px;
@@ -182,14 +178,49 @@ button:hover {
     transition: opacity 0.3s ease-in-out;
 }
 
-.unselected {
-    opacity: 0.4; /* 選択されていないものは半透明 */
-}
-
 input[type="checkbox"] {
     display: none; /* チェックボックスを非表示 */
 }
 
 input[type="checkbox"]:checked + .sake-icon {
     opacity: 1; /* 選択されたものは通常表示 */
+}
+
+.drink-fav-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3列にする */
+    gap: 20px; /* アイテム間の余白 */
+    justify-content: center; /* 水平方向の中央揃え */
+}
+
+.drink-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.drink-name {
+    margin-top: 5px; /* 画像との間隔を調整 */
+    font-size: 14px;
+    font-weight: bold; /* ここを明示的に指定 */
+    text-align: center;
+}
+.logout-container {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.logout-btn {
+    width: 100%;
+    max-width: 250px;
+    padding: 10px;
+    background: red;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
 }
