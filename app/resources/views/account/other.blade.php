@@ -48,18 +48,9 @@
         </ul>
     </div>
     <div class="other-container">
-    <div class="profile-edit">
-        <a href="{{ route('account.edit') }}">プロフィール編集</a>
-    </div>
-    <div class="ID-search">
-        <a href="{{ route('account.search') }}">ID検索</a>
-    </div>
-    <div class="logout-container">
-        <form method="POST" action="{{ route('logout') }}">
-            @csrf
-            <button type="submit" class="logout-btn">ログアウト</button>
-        </form>
-    </div>
+        <div class="top-back">
+            <a href="{{ route('account') }}">戻る</a>
+        </div>
     </div>
 </div>
 @endsection

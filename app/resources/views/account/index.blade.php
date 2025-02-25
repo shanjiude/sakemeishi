@@ -52,7 +52,7 @@
         <a href="{{ route('account.edit') }}">プロフィール編集</a>
     </div>
     <div class="ID-search">
-        <a href="#">ID検索</a>
+        <a href="{{ route('account.search') }}">ID検索</a>
     </div>
     <div class="logout-container">
         <form method="POST" action="{{ route('logout') }}">

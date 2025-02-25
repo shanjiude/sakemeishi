@@ -81,7 +81,7 @@ body {
     align-items: center;
     margin-top: 20px;
 }
-.profile-edit, .ID-search {
+.profile-edit, .ID-search, .top-back {
     width: 250px;
     padding: 5px 10px;
     margin: 5px;
@@ -89,7 +89,7 @@ body {
     background: gray;
     border-radius: 20px;
 }
-.profile-edit a, .ID-search a {
+.profile-edit a, .ID-search a, .top-back a {
     display: block;
     text-decoration: none;
 }
@@ -223,4 +223,60 @@ input[type="checkbox"]:checked + .sake-icon {
     border-radius: 20px;
     cursor: pointer;
     transition: 0.3s;
+}
+
+.search-result {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.search-result a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.search-result img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.search-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10px;
+    padding: 15px; /* 余白を追加 */
+    background-color: #e3f2fd; /* 薄い青 */
+    border-radius: 10px; /* 角を丸く */
+    width: fit-content; /* 内容に応じた幅 */
+    margin: auto; /* 中央配置 */
+    text-decoration: none; /* 下線を消す */
+    color: inherit; /* テキストの色を継承 */
+}
+
+.search-result:hover {
+    background-color: #bbdefb; /* ホバー時に少し濃い青に */
+}
+
+
+form {
+    display: flex;
+    flex-direction: column; /* 縦方向に並べる */
+    align-items: center; /* 中央揃え */
+    gap: 10px; /* 入力欄とボタンの間に余白 */
+}
+
+input[name="user_id"] {
+    width: 300px; /* 以前の 250px より少し大きく */
+    padding: 10px; /* 内側の余白を増やして操作しやすく */
+    font-size: 16px; /* 文字サイズを適度に調整 */
+    border: 1px solid #ccc; /* 境界線を薄いグレーに */
+    border-radius: 5px; /* 角を少し丸める */
 }

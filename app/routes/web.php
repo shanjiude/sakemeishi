@@ -13,6 +13,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/account/{user}', [AccountController::class, 'showOther'])->name('account.showOther'); // 他人のプロフィール
 });
 
+Route::get('/search', [AccountController::class, 'searchForm'])->name('account.search');
+Route::post('/search', [AccountController::class, 'search'])->name('account.search.post');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

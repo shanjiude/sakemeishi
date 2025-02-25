@@ -78,7 +78,24 @@ class AccountController extends Controller
     public function showOther($userId)
     {
         $user = User::findOrFail($userId); // 該当ユーザーがいなければ404
-        return view('account.index', compact('user'));
+        return view('account.other', compact('user'));
+    }
+
+    public function searchForm()
+    {
+        return view('account.search');
+    }
+
+    public function search(Request $request)
+    {
+        $request->validate([
+            'user_id' => 'required|digits:5', // 5桁の数字
+        ]);
+
+        $userId = ltrim($request->input('user_id'), '0'); // 00002 → 2 に変換
+        $user = User::where('id', $userId)->first();
+
+        return view('account.search', compact('user'));
     }
 }
 
