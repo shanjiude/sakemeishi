@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Friend;
 use App\Models\AlcoholType;
 use Illuminate\Support\Facades\Auth;
 
@@ -108,4 +109,3 @@ class AccountController extends Controller
         return view('account.search', compact('user'));
     }
 }
-

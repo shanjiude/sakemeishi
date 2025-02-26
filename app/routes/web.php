@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\FollowlistController;
 use App\Http\Controllers\RakutenController;
 use Illuminate\Support\Facades\Route;
 
@@ -12,6 +13,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/account/edit', [AccountController::class, 'edit'])->name('account.edit'); // プロフィール編集
     Route::patch('/account/update', [AccountController::class, 'update'])->name('account.update');
     Route::get('/account/{user}', [AccountController::class, 'showOther'])->name('account.showOther'); // 他人のプロフィール
+    Route::get('/followlist', [FollowlistController::class, 'index'])->name('followlist.index');
 });
 
 Route::get('/search', [AccountController::class, 'searchForm'])->name('account.search');
