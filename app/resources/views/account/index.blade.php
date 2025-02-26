@@ -9,8 +9,8 @@
         <h2 class="user-name">{{ $user->name }}</h2>
         <div class="user-others">
         <div class="alcohol-strength">
-            <p>お酒の強さ: {{ $user->alcoholStrength->strength }}</p>
-            <p>炭酸の可否: {{ $user->sodaPreference->soda_preference }}</p>
+            <p>お酒の強さ: {{ $user->alcoholStrength->strength ?? '登録されていません'  }}</p>
+            <p>炭酸の可否: {{ $user->sodaPreference->soda_preference ?? '登録されていません'  }}</p>
         </div>
         </div>
     </div>
