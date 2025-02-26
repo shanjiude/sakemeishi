@@ -10,10 +10,10 @@ class HomeController extends Controller
     public function index()
     {
         if (Auth::check()) {
-            $user = Auth::user();
-            return view('homeAuth', compact('user'));
-        } else {
-            return view('home');
+            return redirect()->route('account');
         }
+
+        return view('home'); // ゲスト用のトップページ
     }
+
 }

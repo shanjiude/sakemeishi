@@ -24,7 +24,7 @@
             @endfor
         </select>
 
-        <label for="soda_preference">炭酸の可否:</label>
+        <label for="soda_preference">炭酸の好み:</label>
         <select name="soda_preference">
             <option value="可" {{ old('soda_preference', $user->sodaPreference->soda_preference ?? '可') == '可' ? 'selected' : '' }}>可</option>
             <option value="不可" {{ old('soda_preference', $user->sodaPreference->soda_preference ?? '可') == '不可' ? 'selected' : '' }}>不可</option>

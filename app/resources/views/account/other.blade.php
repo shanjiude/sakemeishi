@@ -10,7 +10,7 @@
         <div class="user-others">
         <div class="alcohol-strength">
             <p>お酒の強さ: {{ $user->alcoholStrength->strength ?? '登録されていません' }}</p>
-            <p>炭酸の可否: {{ $user->sodaPreference->soda_preference ?? '登録されていません' }}</p>
+            <p>炭酸の好み: {{ $user->sodaPreference->soda_preference ?? '登録されていません' }}</p>
         </div>
         </div>
     </div>
@@ -42,9 +42,14 @@
     <div class="drink-list">
         <h3>最近飲んだお酒</h3>
         <ul>
-            <li>🍶 獺祭（Dassai） - 旭酒造</li>
-            <li>🍸 カクテル XYZ - バーオリジナル</li>
-            <li>🍺 プレミアムモルツ - サントリー</li>
+            @forelse ($recentDrinks as $drink)
+                <li>
+                    <img src="{{ $drink->image_url ?: asset('images/beer.png') }}" alt="{{ $drink->name }}" class="sake-icon">
+                    <span class="sake-name">{{ $drink->name }}</span>
+                </li>
+            @empty
+                <li>登録されていません</li>
+            @endforelse
         </ul>
     </div>
     <div class="other-container">
