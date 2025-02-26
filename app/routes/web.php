@@ -12,7 +12,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/account/edit', [AccountController::class, 'edit'])->name('account.edit'); // プロフィール編集
     Route::patch('/account/update', [AccountController::class, 'update'])->name('account.update');
     Route::get('/account/{user}', [AccountController::class, 'showOther'])->name('account.showOther'); // 他人のプロフィール
-    Route::get('/account/followlist', [AccountController::class, 'followlist'])->name('account.followlist');
+    Route::get('/followlist', [FollowlistController::class, 'index'])->name('followlist.index');
 });
 
 Route::get('/search', [AccountController::class, 'searchForm'])->name('account.search');

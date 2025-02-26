@@ -21,7 +21,7 @@ class FollowlistController extends Controller
         }
 
         $follows = $user->friend()->get(); // ユーザーのフォローリストを取得
-        return view('account.followlist', ['follows' => $follows]); // ビューへデータを渡す
+        return view('followlist.index', ['follows' => $follows]); // ビューへデータを渡す
     }
 
 }

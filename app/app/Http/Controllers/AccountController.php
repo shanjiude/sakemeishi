@@ -98,14 +98,4 @@ class AccountController extends Controller
 
         return view('account.search', compact('user'));
     }
-    public function followlist()
-    {
-        $user = Auth::user(); // ログインユーザーを取得
-        if (!$user) {
-            abort(403, 'ログインしてください'); // ユーザーが未ログインの場合の処理
-        }
-
-        $follows = $user->friend()->get(); // ユーザーのフォローリストを取得
-        return view('account.followlist', ['follows' => $follows]); // ビューへデータを渡す
-    }
 }

@@ -14,8 +14,8 @@
         </ul>
         @endif
     </div>
-    <div class="mt-4 text-center">
-        <a href="#top" class="text-white bg-blue-500 hover:bg-blue-700 px-4 py-2 rounded">Topに戻る</a>
+    <div class="">
+        <a href="{{route('account')}}" class="">Topに戻る</a>
     </div>
 </div>
 @endsection
