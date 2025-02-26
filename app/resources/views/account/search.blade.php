@@ -19,4 +19,9 @@
         </div>
     @endif
 </div>
+<div class="other-container">
+    <div class="top-back">
+        <a href="{{ route('account') }}">戻る</a>
+    </div>
+</div>
 @endsection
