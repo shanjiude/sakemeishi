@@ -15,13 +15,23 @@
         <label for="name">名前:</label>
         <input type="text" name="name" value="{{ old('name', $user->name) }}">
 
+        @php
+            $strengthLabels = [
+                0 => '全く飲めない',
+                1 => 'ほぼ飲めない',
+                2 => '弱い',
+                3 => '普通',
+                4 => '強い',
+                5 => '酒豪',
+            ];
+        @endphp
         <label for="alcohol_strength">お酒の強さ:</label>
         <select name="alcohol_strength">
-            @for ($i = 0; $i <= 5; $i++)
-                <option value="{{ $i }}" {{ old('alcohol_strength', $user->alcoholStrength->strength ?? 0) == $i ? 'selected' : '' }}>
-                    {{ $i }}
+            @foreach ($strengthLabels as $value => $label)
+                <option value="{{ $value }}" {{ old('alcohol_strength', $user->alcoholStrength->strength ?? 0) == $value ? 'selected' : '' }}>
+                    {{ $label }}
                 </option>
-            @endfor
+            @endforeach
         </select>
 
         <label for="soda_preference">炭酸の好み:</label>

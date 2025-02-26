@@ -9,7 +9,23 @@
         <h2 class="user-name">{{ $user->name }}</h2>
         <div class="user-others">
         <div class="alcohol-strength">
-            <p>お酒の強さ: {{ $user->alcoholStrength->strength ?? '登録されていません'  }}</p>
+            @php
+                    $strengthLabels = [
+                    0 => '全く飲めない',
+                    1 => 'ほぼ飲めない',
+                    2 => '弱い',
+                    3 => '普通',
+                    4 => '強い',
+                    5 => '酒豪',
+                ];
+                $strength = $user->alcoholStrength->strength;
+            @endphp
+            <p>お酒の強さ:  {{ $strengthLabels[$strength] ?? '登録されていません'  }}</p>
+            <div class="alcohol-icons">
+                @for ($i = 1; $i <= 5; $i++)
+                    <i class="fas fa-beer" style="color: {{ $i <= $strength ? 'gold' : 'gray' }};"></i>
+                @endfor
+            </div>
             <p>炭酸の好み: {{ $user->sodaPreference->soda_preference ?? '登録されていません'  }}</p>
         </div>
         </div>
