@@ -21,7 +21,11 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        $this->call(AlcoholTypesSeeder::class);
+        $this->call([
+            AlcoholTypesSeeder::class,
+            UsersSeeder::class,
+            FriendsSeeder::class
+            ]);
         DB::table('users')->insert([
             [
                 'name' => 'test',               // ユーザー名

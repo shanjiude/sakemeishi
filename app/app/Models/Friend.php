@@ -12,4 +12,9 @@ class Friend extends Model
     {
         return $this->belongsTo(User::class);
     }
+    // フォローされているユーザー（friend_id）を取得するリレーション
+    public function friend()
+    {
+        return $this->belongsTo(User::class, 'friend_id');
+    }
 }
