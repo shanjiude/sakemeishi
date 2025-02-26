@@ -13,12 +13,14 @@ class AccountController extends Controller
     public function show()
     {
         $user = Auth::user();
+        $recentDrinks = $user->favoriteDrinks()->latest()->take(3)->get();
         $alcoholTypes = AlcoholType::all();
         return view('account.index', [
             'user' => $user,
             'alcoholTypes' => $alcoholTypes,
             'alcoholStrength' => $user->alcoholStrength,
-            'sodaPreference' => $user->sodaPreference
+            'sodaPreference' => $user->sodaPreference,
+            'recentDrinks' => $recentDrinks,
         ]);
     }
 
@@ -78,8 +80,16 @@ class AccountController extends Controller
 
     public function showOther($userId)
     {
-        $user = User::findOrFail($userId); // 該当ユーザーがいなければ404
-        return view('account.other', compact('user'));
+        $user = User::findOrFail($userId); // 表示対象のユーザーを取得
+        $alcoholTypes = AlcoholType::all();
+
+        return view('account.other', [
+            'user' => $user,
+            'alcoholTypes' => $alcoholTypes,
+            'alcoholStrength' => $user->alcoholStrength, // 指定ユーザーの alcoholStrength
+            'sodaPreference' => $user->sodaPreference, // 指定ユーザーの sodaPreference
+            'recentDrinks' => $user->favoriteDrinks()->latest()->take(3)->get(), // 指定ユーザーの最近飲んだお酒
+        ]);
     }
 
     public function searchForm()
