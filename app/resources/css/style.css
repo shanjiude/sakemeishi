@@ -405,7 +405,14 @@ input[name="user_id"] {
 .follow-list {
     list-style-type: none;
     padding: 0;
+    display: flex;
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+    text-align: center;
+    flex-wrap: wrap; /* アイテムが多くても折り返し */
+    margin: 0 auto; /* 中央配置 */
 }
+
 
 .follows {
     display: flex;
@@ -417,7 +424,6 @@ input[name="user_id"] {
 
 .follows img {
     border-radius: 50%;
-    margin-right: 15px;
 }
 
 .follows p {
@@ -425,6 +431,10 @@ input[name="user_id"] {
     font-weight: bold;
     margin: 0;
     margin-right: 15px; /* ユーザー名とお酒の好みの間隔 */
+}
+.follow-user-icon{
+    border-radius: 50%;
+    margin-right: 15px;
 }
 
 .return-top {
@@ -444,7 +454,6 @@ input[name="user_id"] {
 
 /* お酒の好みのラベルと画像を横並びにする */
 .follow-favorite-drinks {
-    margin-top: 10px;
     display: flex;
     align-items: center;
 }
@@ -470,25 +479,24 @@ input[name="user_id"] {
 
 .drink-block {
     display: flex;
-    align-items: center;/* 中央揃え */
+    align-items: center; /* 横方向の中央揃え */
+    justify-content: center; /* 縦方向の中央揃え */
     flex-direction: column; /* 縦に並べる */
-    margin-right: 15px;/* アイテム間の間隔 */
+    margin-right: 15px; /* アイテム間の間隔 */
     font-size: 14px;
 }
 
 .drink-block img {
     width: 30px;
     height: 30px;
-    margin-right: 8px;
+    margin-bottom: 5px; /* 画像と名前の間隔 */
 }
 
-
 .drinks-name {
-    margin-left: 8px;
-    margin-top: 5px; /* 画像との間隔を調整 */
     font-size: 14px;
-    font-weight: bold; /* ここを明示的に指定 */
+    font-weight: bold;
     text-align: center;
+    margin-top: 5px; /* 画像との間隔を調整 */
 }
 
 /* 「未設定」のスタイル */

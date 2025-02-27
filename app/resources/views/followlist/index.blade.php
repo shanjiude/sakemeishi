@@ -10,7 +10,7 @@
         <ul>
             @foreach($follows as $follow)
                 <li class="follows">
-                    <img src="{{ asset($follow->profile_picture) }}" alt="Profile Picture" width="50" height="50">
+                    <img class="follow-user-icon" src="{{ asset($follow->profile_picture) }}" alt="Profile Picture" width="50" height="50">
                     <p>{{ $follow->name }}</p>
 
                     @php
