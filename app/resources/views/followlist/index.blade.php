@@ -23,22 +23,22 @@
                     <!-- 好きなお酒が1つ以上ある場合のみ表示 -->
                     @if ($favoriteDrinks->isNotEmpty())
                     <div class="follow-favorite-drinks">
-                        <p>お酒の好み：</p>
-                        <div class="drink-tags">
-                            <div class="drink-fav-list">
+                        <p class="pref-drink-label">お酒の好み：</p>
+                        <div class="drink-wrapper">
+                            <div class="pref-drink-list">
                                 @foreach($favoriteDrinks as $preference)
-                                <div class="drink-item">
+                                <div class="drink-block">
                                     <img src="{{ asset('images/' . $preference->alcoholType->image_path) }}"
                                          alt="{{ $preference->alcoholType->name }} Icon"
                                          class="drink-icon">
-                                    <span class="drink-name">{{ $preference->alcoholType->name }}</span>
+                                    <span class="drinks-name">{{ $preference->alcoholType->name }}</span>
                                 </div>
                                 @endforeach
                             </div>
                         </div>
                     </div>
                     @else
-                        <p>お酒の好み: 未設定</p>
+                        <p class="pref-drink-label">お酒の好み: 未設定</p>
                     @endif
                 </li>
             @endforeach
