@@ -83,6 +83,9 @@
     </div>
     <div class="other-container">
         <div class="top-back">
+            <a href="{{ route('followlist.index') }}">知り合い一覧へ</a>
+        </div>
+        <div class="top-back">
             <a href="{{ route('account') }}">戻る</a>
         </div>
     </div>
