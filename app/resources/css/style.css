@@ -58,8 +58,11 @@ body {
 }
 
 .user-name {
-    margin-left: 10px;
     line-height: 40px;
+}
+
+.user-head {
+    width: 120px;
 }
 
 .user-others {
@@ -70,7 +73,6 @@ body {
 }
 .alcohol-strength {
     line-height: 40px;
-    padding-left: 50px;
 }
 
 .favorite-drinks, .drink-list {

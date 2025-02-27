@@ -4,9 +4,11 @@
 <div class="container">
     <div class="profile-header">
         <div class="user-head">
-        <img src="{{ asset('images/default_icon.png') }}" alt="User Icon" class="profile-icon">
+            <div class="user-icon-container flex flex-col items-center">
+            <img src="{{ asset('images/default_icon.png') }}" alt="User Icon" class="profile-icon">
+            <h2 class="user-name">{{ $user->name }}</h2>
+            </div>
         </div>
-        <h2 class="user-name">{{ $user->name }}</h2>
         <div class="user-others">
         <div class="alcohol-strength">
             @php
