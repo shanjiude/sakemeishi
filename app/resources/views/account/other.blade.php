@@ -18,7 +18,7 @@
                     4 => '強い',
                     5 => '酒豪',
                 ];
-                $strength = $user->alcoholStrength->strength ?? 0;
+                $strength = $user->alcoholStrength->strength ?? '登録されていません';
             @endphp
             <p>お酒の強さ:  {{ $strengthLabels[$strength] ?? '登録されていません'  }}</p>
             <div class="alcohol-icons">
