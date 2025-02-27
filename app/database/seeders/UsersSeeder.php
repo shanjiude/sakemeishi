@@ -20,7 +20,7 @@ class UsersSeeder extends Seeder
                 'name' => 'User ' . $id,
                 'email' => 'user' . $id . '@example.com',
                 'password' => Hash::make('password'), // パスワードは適切にハッシュ化
-                'profile_picture' => 'profile_pictures/dummy-avatar.jpg', // ダミーの画像を設定
+                'profile_picture' =>  'images/default_icon.png', // ダミーの画像を設定
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
