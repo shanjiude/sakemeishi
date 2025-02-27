@@ -373,4 +373,65 @@ input[name="user_id"] {
     gap: 5px; /* アイコンの間隔を調整 */
 }
 
+/*フォロー一覧*/
+.followlist-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.headline {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.not-following {
+    color: #777;
+    font-size: 16px;
+}
+
+.follow-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.follows {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.follows img {
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.follows p {
+    font-size: 16px;
+    color: #444;
+    margin: 0;
+}
+
+.return-top a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.return-top a:hover {
+    text-decoration: underline;
+}
 

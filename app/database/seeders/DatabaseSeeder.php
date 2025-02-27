@@ -26,12 +26,12 @@ class DatabaseSeeder extends Seeder
             UsersSeeder::class,
             FriendsSeeder::class
             ]);
-        DB::table('users')->insert([
-            [
-                'name' => 'test',               // ユーザー名
-                'email' => 'test@test',  // メールアドレス
-                'password' => Hash::make('password') // パスワードをハッシュ化
-            ],
-        ]);
+        // DB::table('users')->insert([
+        //     [
+        //         'name' => 'test',               // ユーザー名
+        //         'email' => 'test@test',  // メールアドレス
+        //         'password' => Hash::make('password') // パスワードをハッシュ化
+        //     ],
+        // ]);
     }
 }
