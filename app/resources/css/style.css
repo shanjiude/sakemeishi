@@ -337,6 +337,9 @@ input[name="user_id"] {
 .sake-name {
     width: 180px;
     display: -webkit-box;
+    font-weight: bold;
+    margin-top: 5px;
+    font-size: 14px;
     line-clamp: 2;
     -webkit-line-clamp: 2; /* 2行まで表示 */
     -webkit-box-orient: vertical;
