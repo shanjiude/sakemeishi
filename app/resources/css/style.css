@@ -89,7 +89,7 @@ body {
     background: gray;
     border-radius: 20px;
 }
-.profile-edit a, .ID-search a, .top-back a {
+.profile-edit a, .ID-search a,.go-followlist a, .top-back a {
     display: block;
     text-decoration: none;
 }
