@@ -78,6 +78,9 @@
     <div class="ID-search">
         <a href="{{ route('rakuten.search') }}">最近飲んだお酒の登録</a>
     </div>
+    <div class="go-followlist">
+        <a href="{{ route('followlist.index') }}">フォロー一覧</a>
+    </div>
     <div class="logout-container">
         <form method="POST" action="{{ route('logout') }}">
             @csrf

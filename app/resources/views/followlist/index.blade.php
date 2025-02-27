@@ -18,7 +18,7 @@
         @endif
     </div>
     <div class="return-top">
-        <a href="{{ route('account') }}" class="">Topに戻る</a>
+        <a href="{{ route('account') }}" class="">プロフィールに戻る</a>
     </div>
 </div>
 @endsection
