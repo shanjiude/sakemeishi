@@ -412,6 +412,11 @@ input[name="user_id"] {
     flex-wrap: wrap; /* アイテムが多くても折り返し */
     margin: 0 auto; /* 中央配置 */
 }
+.followlist-to-otherprofile{
+    display: flex;
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center; /* 垂直方向の中央揃え */
+}
 
 
 .follows {
