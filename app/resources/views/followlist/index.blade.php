@@ -15,7 +15,8 @@
         @endif
     </div>
     <div class="">
-        <a href="{{route('account')}}" class="">Topに戻る</a>
+        <a href="{{ route('account') }}" class="">Topに戻る</a>
     </div>
 </div>
 @endsection
+
