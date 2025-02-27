@@ -10,8 +10,10 @@
         <ul>
             @foreach($follows as $follow)
                 <li class="follows">
-                    <img class="follow-user-icon" src="{{ asset($follow->profile_picture) }}" alt="Profile Picture" width="50" height="50">
-                    <p>{{ $follow->name }}</p>
+                    <a href="{{ route('account.showOther', $user->id) }}" class="search-result">
+                        <img class="follow-user-icon" src="{{ asset($follow->profile_picture) }}" alt="Profile Picture" width="50" height="50">
+                        <p>{{ $follow->name }}</p>
+                    </a>
 
                     @php
                         // "好き" のお酒だけをフィルタリング
