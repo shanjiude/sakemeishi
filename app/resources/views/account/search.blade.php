@@ -16,6 +16,13 @@
                 <img src="{{ asset('images/' . ($user->icon_path ?? 'default_icon.png')) }}" alt="User Icon" class="profile-icon">
                 <p>{{ $user->name }}</p>
             </a>
+            <div class="follow-container">
+                <button id="follow-btn"
+                        data-user-id="{{ $user->id }}"
+                        class="px-2 py-2 bg-blue-500 text-white rounded">
+                    {{ Auth::user()->isFollowing($user->id) ? 'フォロー解除' : 'フォロー' }}
+                </button>
+            </div>
         </div>
     @endif
 </div>
