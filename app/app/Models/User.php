@@ -70,6 +70,20 @@ class User extends Authenticatable
     public function favoriteDrinks()
     {
         return $this->hasMany(FavoriteDrink::class);
+    }
 
+    public function friends()
+    {
+        return $this->belongsToMany(User::class, 'friends', 'user_id', 'friend_id');
+    }
+
+    public function followers()
+    {
+        return $this->belongsToMany(User::class, 'friends', 'friend_id', 'user_id');
+    }
+
+    public function isFollowing($userId)
+    {
+        return $this->friends()->where('friend_id', $userId)->exists();
     }
 }

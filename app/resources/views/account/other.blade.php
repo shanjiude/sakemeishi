@@ -4,9 +4,18 @@
 <div class="container">
     <div class="profile-header">
         <div class="user-head">
-        <img src="{{ asset('images/default_icon.png') }}" alt="User Icon" class="profile-icon">
+            <div class="user-icon-container flex items-center">
+            <img src="{{ asset('images/default_icon.png') }}" alt="User Icon" class="profile-icon">
+            <h2 class="user-name">{{ $user->name }}</h2>
+            </div>
+                <div class="follow-container">
+                    <button id="follow-btn"
+                            data-user-id="{{ $user->id }}"
+                            class="px-2 py-2 bg-blue-500 text-white rounded">
+                        {{ Auth::user()->isFollowing($user->id) ? 'フォロー解除' : 'フォロー' }}
+                    </button>
+                </div>
         </div>
-        <h2 class="user-name">{{ $user->name }}</h2>
         <div class="user-others">
         <div class="alcohol-strength">
             @php
