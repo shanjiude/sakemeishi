@@ -2,6 +2,8 @@ body {
     text-align: center;
     font-family: Arial, sans-serif;
 }
+/******************************ヘッダー************************************/
+
 #Hd {
     background: linear-gradient(135deg, orange, #fad0c4); /* ポップなグラデーション */
     padding: 20px;
@@ -38,6 +40,9 @@ body {
     color: white;
     border-radius: 5px;
 }
+
+/******************************プロフィール画面************************************/
+
 .profile-header {
     padding: 20px;
     background: #f8f8f8;
@@ -74,6 +79,7 @@ body {
     background: #fff5e1;
     border-radius: 10px;
 }
+/******************************その他ボタン************************************/
 
 .other-container {
     display: flex;
@@ -284,6 +290,8 @@ input[name="user_id"] {
     border: 1px solid #ccc; /* 境界線を薄いグレーに */
     border-radius: 5px; /* 角を少し丸める */
 }
+
+/******************************お酒検索フォーム************************************/
 
 .search-drink-list {
     display: flex; /* 横並びにする */
