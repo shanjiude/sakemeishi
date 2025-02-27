@@ -63,6 +63,7 @@
 
     <div class="drink-list">
         <h3>最近飲んだお酒</h3>
+        <div class="drink-list">
         <ul>
             @forelse ($recentDrinks as $drink)
                 <li>
@@ -73,6 +74,7 @@
                 <li>登録されていません</li>
             @endforelse
         </ul>
+        </div>
     </div>
     <div class="other-container">
     <div class="profile-edit">
