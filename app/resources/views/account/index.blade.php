@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+    <div class="user-id">
+        <p>ID : {{ str_pad($user->id, 5, '0', STR_PAD_LEFT) }}</p>
+    </div>
     <div class="profile-header">
         <div class="user-head">
             <div class="user-icon-container flex flex-col items-center">
@@ -35,10 +38,6 @@
             <p>炭酸の好み: {{ $user->sodaPreference->soda_preference ?? '登録されていません'  }}</p>
         </div>
         </div>
-    </div>
-
-    <div class="user-id">
-        <p>ID : {{ str_pad($user->id, 5, '0', STR_PAD_LEFT) }}</p>
     </div>
 
     <div class="favorite-drinks">
