@@ -17,5 +17,10 @@
             </div>
         </div>
     </div>
+    <div class="flex justify-center mt-6">
+        <a href="{{ route('account') }}" class="bg-orange-500 text-white font-bold py-2 px-4 rounded-lg shadow-md hover:bg-orange-600 transition duration-300">
+            プロフィール画面へ
+        </a>
+    </div>
 </x-app-layout>
 @endsection

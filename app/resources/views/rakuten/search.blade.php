@@ -5,7 +5,7 @@
     <h2>楽天市場からお酒を検索</h2>
 
     <form action="{{ route('rakuten.search') }}" method="GET">
-        <input type="text" name="keyword" placeholder="お酒の名前を入力" value="{{ old('keyword') }}">
+        <input type="text" name="keyword" placeholder="お酒の名前を入力" value="{{ old('keyword') }}" required>
         <button type="submit" class="search-button">検索</button>
     </form>
 
