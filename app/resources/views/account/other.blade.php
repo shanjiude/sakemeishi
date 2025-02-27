@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="container">
+    <div class="user-id">
+        <p>ID : {{ str_pad($user->id, 5, '0', STR_PAD_LEFT) }}</p>
+    </div>
     <div class="profile-header">
         <div class="user-head">
             <div class="user-icon-container flex flex-col items-center">
@@ -44,10 +47,6 @@
         </div>
     </div>
 
-    <div class="user-id">
-        <p>ID : {{ str_pad($user->id, 5, '0', STR_PAD_LEFT) }}</p>
-    </div>
-
     <div class="favorite-drinks">
         <h3>好きなお酒の種類</h3>
         <div class="favorite-drinks">
@@ -82,6 +81,9 @@
         </ul>
     </div>
     <div class="other-container">
+        <div class="top-back">
+            <a href="{{ route('followlist.index') }}">知り合い一覧へ</a>
+        </div>
         <div class="top-back">
             <a href="{{ route('account') }}">戻る</a>
         </div>
