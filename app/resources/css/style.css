@@ -374,25 +374,20 @@ input[name="user_id"] {
 }
 
 /******************************フォロー一覧************************************/
-/* ベースのレイアウト */
+/* フォローリスト全体のレイアウト */
 .followlist-container {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
 }
 
 .headline {
-    text-align: center;
     font-size: 24px;
-    font-weight: bold;
-    color: #333;
     margin-bottom: 20px;
+    color: #333;
 }
 
-/* フォローユーザーリスト */
 .follow-list {
     list-style-type: none;
     padding: 0;
@@ -401,12 +396,9 @@ input[name="user_id"] {
 .follows {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    background-color: #fff;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
 }
 
 .follows img {
@@ -415,88 +407,79 @@ input[name="user_id"] {
 }
 
 .follows p {
-    font-size: 18px;
-    font-weight: 500;
-    margin: 0;
-    color: #333;
-    flex-grow: 1;
-}
-
-.favorite-drinks {
-    margin-top: 10px;
-    margin-left: 10px;
-    padding-top: 10px;
-}
-
-/* お酒の好みの表示 */
-.favorite-drinks .drink-label {
-    font-weight: 600;
     font-size: 16px;
-    color: #555;
-    margin-bottom: 8px;
+    font-weight: bold;
+    margin: 0;
+    margin-right: 15px; /* ユーザー名とお酒の好みの間隔 */
 }
 
-.favorite-drinks .drink-list {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-.favorite-drinks .drink-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f5f5f5;
-    padding: 10px;
-    border-radius: 8px;
-    width: 70px;  /* 小さめの幅に調整 */
-    text-align: center;
-    transition: transform 0.2s ease-in-out;
-}
-
-.favorite-drinks .drink-item:hover {
-    transform: translateY(-5px); /* ホバー時に少し浮かせる */
-}
-
-.favorite-drinks .sake-icon {
-    width: 40px;  /* 画像を小さく調整 */
-    height: 40px;  /* 画像を小さく調整 */
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.favorite-drinks .drink-name {
-    font-size: 12px;
-    margin-top: 5px;
-    color: #555;
-}
-
-/* 未設定の場合のスタイリング */
-.not-set {
-    color: #888;
-    font-size: 14px;
-    font-style: italic;
-    text-align: center;
-}
-
-/* 「トップに戻る」ボタン */
 .return-top {
-    text-align: center;
     margin-top: 20px;
+    text-align: center;
 }
 
 .return-top a {
+    color: #007bff;
     text-decoration: none;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: #fff;
-    border-radius: 5px;
     font-weight: bold;
-    font-size: 16px;
-    transition: background-color 0.3s;
 }
 
 .return-top a:hover {
-    background-color: #45a049;
+    text-decoration: underline;
+}
+
+/* お酒の好みのラベルとアイコンを横並びにする */
+.follow-favorite-drinks {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.follow-favorite-drinks p {
+    font-weight: bold;
+    margin-right: 10px; /* 文字とアイコンの間隔 */
+    margin-bottom: 0;
+}
+
+.drink-tags {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-left: 10px; /* お酒のアイコンと文字の間隔 */
+}
+
+.drink-fav-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.drink-item {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 14px;
+}
+
+.drink-item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+
+.drink-item span {
+    margin-left: 8px;
+}
+
+
+/* 「未設定」のスタイル */
+.follow-favorite-drinks p {
+    color: #888;
+    font-style: italic;
+}
+
+/* フォローしていない場合 */
+.not-following {
+    font-size: 16px;
+    color: #888;
 }
