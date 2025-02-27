@@ -3,3 +3,10 @@ body {
     width: 100%;
     overflow-x: hidden;
 }
+
+/******************************フォロー一覧*****************************/
+@media screen and (max-width: 600px) {
+    .drink-block:nth-child(n+2) {  /* 2つ目以降を非表示 */
+        display: none;
+    }
+}
