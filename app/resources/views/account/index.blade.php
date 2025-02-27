@@ -18,14 +18,18 @@
                     4 => '強い',
                     5 => '酒豪',
                 ];
-                $strength = $user->alcoholStrength->strength ?? '登録されていません';
             @endphp
-            <p>お酒の強さ:  {{ $strengthLabels[$strength] ?? '登録されていません'  }}</p>
+            @if(isset($user->alcoholStrength->strength))
+            @php $strength = $user->alcoholStrength->strength; @endphp
+            <p>お酒の強さ: {{ $strengthLabels[$strength] }}</p>
             <div class="alcohol-icons">
                 @for ($i = 1; $i <= 5; $i++)
                     <i class="fas fa-beer" style="color: {{ $i <= $strength ? 'gold' : 'gray' }};"></i>
                 @endfor
             </div>
+            @else
+                <p>お酒の強さ: 登録されていません</p>
+            @endif
             <p>炭酸の好み: {{ $user->sodaPreference->soda_preference ?? '登録されていません'  }}</p>
         </div>
         </div>
