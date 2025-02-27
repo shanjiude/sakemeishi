@@ -56,7 +56,7 @@ class RakutenController extends Controller
             'product_url' => $request->product_url,
         ]);
 
-        return redirect()->back()->with('success', 'お気に入りに追加しました！');
+        return redirect()->route('account')->with('success', 'お気に入りに追加しました！');
     }
 
 }
