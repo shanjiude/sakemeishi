@@ -13,6 +13,13 @@ class UsersSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::table('users')->insert([
+            [
+                'name' => 'test',               // ユーザー名
+                'email' => 'test@test',  // メールアドレス
+                'password' => Hash::make('password') // パスワードをハッシュ化
+            ],
+        ]);
         // id 2 から 10 のユーザーを作成
         foreach (range(2, 10) as $id) {
             DB::table('users')->insert([
@@ -25,6 +32,7 @@ class UsersSeeder extends Seeder
                 'updated_at' => now(),
             ]);
         }
+
     }
 }
 
