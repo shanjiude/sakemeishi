@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             AlcoholTypesSeeder::class,
             UsersSeeder::class,
-            FriendsSeeder::class
+            FriendsSeeder::class,
+            UserAlcoholPreferencesSeeder::class
             ]);
         // DB::table('users')->insert([
         //     [
