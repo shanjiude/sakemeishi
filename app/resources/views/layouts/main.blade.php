@@ -12,6 +12,7 @@
     @endif
     <link rel="icon" type="image/png" href="{{ asset('cheers.png') }}">
     <link href="https://use.fontawesome.com/releases/v6.4.2/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
