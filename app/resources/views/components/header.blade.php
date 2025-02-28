@@ -30,5 +30,3 @@
         </div>
     </div>
 </header>
-<script src="{{ mix('js/app.js') }}"></script>
-
