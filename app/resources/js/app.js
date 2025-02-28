@@ -1,5 +1,6 @@
 import './bootstrap';
 import './follow';
+import './hamburgermenu';
 
 import Alpine from 'alpinejs';
 
