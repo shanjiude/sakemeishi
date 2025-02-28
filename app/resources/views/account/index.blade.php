@@ -8,8 +8,8 @@
     <div class="profile-header">
         <div class="user-head">
             <div class="user-icon-container flex flex-col items-center">
-            <img src="{{ asset('images/default_icon.png') }}" alt="User Icon" class="profile-icon">
-            <h2 class="user-name">{{ $user->name }}</h2>
+                <img src="{{ asset($user->profile_picture ?? 'images/default_icon.png') }}" alt="User Icon" class="profile-icon">
+                <h2 class="user-name">{{ $user->name }}</h2>
             </div>
         </div>
         <div class="user-others">

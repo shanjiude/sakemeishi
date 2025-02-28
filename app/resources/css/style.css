@@ -515,3 +515,96 @@ input[name="user_id"] {
     font-size: 16px;
     color: #888;
 }
+
+/******************************アイコン編集************************************/
+
+
+.icon-edit-container {
+    width: 300px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.current-icon {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+}
+
+.icon-upload-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* デフォルトのファイル選択を非表示にする */
+#icon {
+    display: none;
+}
+
+/* カスタムのファイル選択ボタン */
+.icon-upload-label {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* ホバー時のスタイル */
+.icon-upload-label:hover {
+    background-color: #0056b3;
+}
+
+/* フォーカス時（キーボード操作でもわかるように） */
+#icon:focus + .icon-upload-label {
+    box-shadow: 0 0 5px 3px rgba(0, 123, 255, 0.5);
+}
+
+
+.icon-update-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.icon-update-btn:hover {
+    background-color: #0056b3;
+}
+
+/* カスタムファイル選択ボタン */
+.custom-file-label {
+    display: inline-block;
+    width: 100%;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+}
+
+.custom-file-label:hover {
+    background-color: #e9ecef;
+}

@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Friend;
 use App\Models\AlcoholType;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+
 
 class AccountController extends Controller
 {
@@ -107,5 +109,51 @@ class AccountController extends Controller
         $user = User::where('id', $userId)->first();
 
         return view('account.search', compact('user'));
+    }
+
+    public function uploadIcon(Request $request)
+    {
+        if (!$request->hasFile('icon')) {
+            \Log::error('ファイルがアップロードされていません');
+            return back()->with('error', 'ファイルがアップロードされていません');
+        }
+
+        $file = $request->file('icon');
+
+        // ファイル情報をログ出力
+        \Log::info('ファイル情報:', [
+            'original_name' => $file->getClientOriginalName(),
+            'mime' => $file->getMimeType(),
+            'size' => $file->getSize()
+        ]);
+
+        // 画像のバリデーション
+        $request->validate([
+            'icon' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048' // 画像ファイルのみ許可（2MBまで）
+        ]);
+
+        // 画像を保存
+        $path = $file->store('icons', 'public');
+
+        if (!$path) {
+            \Log::error('画像の保存に失敗しました');
+            return back()->with('error', '画像の保存に失敗しました');
+        }
+
+        $iconPath = str_replace('public/', '', $path); // "icons/ファイル名.png"
+
+        // 保存先をログ出力
+        \Log::info('保存されたファイルパス:', ['path' => $iconPath]);
+
+        // ユーザーのアイコンパスを更新
+        $user = auth()->user();
+        $user->profile_picture = 'storage/' . $iconPath;
+
+        if (!$user->save()) {
+            \Log::error('データベースの更新に失敗しました');
+            return back()->with('error', 'データベースの更新に失敗しました');
+        }
+
+        return back()->with('success', 'アイコンを更新しました');
     }
 }

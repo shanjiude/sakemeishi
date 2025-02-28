@@ -13,6 +13,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/account', [AccountController::class, 'show'])->name('account'); // 自分のプロフィール
     Route::get('/account/edit', [AccountController::class, 'edit'])->name('account.edit'); // プロフィール編集
     Route::patch('/account/update', [AccountController::class, 'update'])->name('account.update');
+    Route::patch('/account/icon-upload', [AccountController::class, 'uploadIcon'])->name('account.icon.upload');
     Route::get('/account/{user}', [AccountController::class, 'showOther'])->name('account.showOther'); // 他人のプロフィール
     Route::get('/followlist', [FollowlistController::class, 'index'])->name('followlist.index');
 });

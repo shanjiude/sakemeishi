@@ -8,12 +8,30 @@
         <p class="alert alert-success">{{ session('success') }}</p>
     @endif
 
+    <div class="icon-edit-container">
+        <form action="{{ route('account.icon.upload') }}" method="POST" enctype="multipart/form-data">
+            @csrf
+            @method('PATCH')
+            <!-- 現在のアイコン表示 -->
+            <div class="current-icon">
+                <img src="{{ asset($user->profile_picture ?? 'images/default_icon.png') }}" alt="User Icon" class="profile-icon">
+            </div>
+
+            <div class="icon-upload-container">
+                <label for="icon" class="icon-upload-label">アイコン変更</label>
+                <input type="file" name="icon" id="icon" accept="image/*" autocomplete="off">
+            </div>
+
+            <button type="submit" class="icon-update-btn">変更</button>
+        </form>
+    </div>
+
     <form action="{{ route('account.update') }}" method="POST">
         @csrf
         @method('PATCH')
 
-        <label for="name">名前:</label>
-        <input type="text" name="name" value="{{ old('name', $user->name) }}">
+        <label for="name">名前</label>
+        <input type="text" name="name" id="name" value="{{ old('name', $user->name) }}" autocomplete="name">
 
         @php
             $strengthLabels = [
@@ -25,8 +43,8 @@
                 5 => '酒豪',
             ];
         @endphp
-        <label for="alcohol_strength">お酒の強さ:</label>
-        <select name="alcohol_strength">
+        <label for="alcohol_strength">お酒の強さ</label>
+        <select name="alcohol_strength" id="alcohol_strength">
             @foreach ($strengthLabels as $value => $label)
                 <option value="{{ $value }}" {{ old('alcohol_strength', $user->alcoholStrength->strength ?? 0) == $value ? 'selected' : '' }}>
                     {{ $label }}
@@ -34,13 +52,13 @@
             @endforeach
         </select>
 
-        <label for="soda_preference">炭酸の好み:</label>
-        <select name="soda_preference">
+        <label for="soda_preference">炭酸の好み</label>
+        <select name="soda_preference" id="soda_preference">
             <option value="可" {{ old('soda_preference', $user->sodaPreference->soda_preference ?? '可') == '可' ? 'selected' : '' }}>可</option>
             <option value="不可" {{ old('soda_preference', $user->sodaPreference->soda_preference ?? '可') == '不可' ? 'selected' : '' }}>不可</option>
         </select>
 
-        <label>好きなお酒の種類:</label>
+        <label>好きなお酒の種類</label>
         <div class="favorite-drinks">
             <div class="drink-tags">
                 @foreach($alcoholTypes->chunk(3) as $index => $row)
