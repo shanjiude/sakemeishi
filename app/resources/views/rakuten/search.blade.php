@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title', '飲んだお酒登録')
 
 @section('content')
 <div class="container">

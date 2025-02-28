@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title', $user->name)
 
 @section('content')
 <div class="container">
@@ -83,7 +84,7 @@
     </div>
     <div class="other-container">
         <div class="top-back">
-            <a href="{{ route('followlist.index') }}">知り合い一覧へ</a>
+            <a href="{{ route('followlist.index') }}">フォロー一覧へ</a>
         </div>
         <div class="top-back">
             <a href="{{ route('account') }}">戻る</a>

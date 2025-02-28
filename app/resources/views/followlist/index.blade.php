@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title', 'フォロー一覧')
 
 @section('content')
 <div class="followlist-container">

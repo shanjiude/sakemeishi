@@ -1,4 +1,5 @@
 @extends('layouts.main')
+@section('title', 'ID検索')
 
 @section('content')
 <div class="container">
