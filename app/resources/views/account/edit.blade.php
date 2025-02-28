@@ -15,6 +15,7 @@
             <!-- 現在のアイコン表示 -->
             <div class="current-icon">
                 <img src="{{ asset($user->profile_picture ?? 'images/default_icon.png') }}" alt="User Icon" class="profile-icon">
+                <p id="selected-file-name" class="file-name-display"></p>
             </div>
 
             <div class="icon-upload-container">
@@ -25,6 +26,13 @@
             <button type="submit" class="icon-update-btn">変更</button>
         </form>
     </div>
+    <script>
+        document.getElementById("icon").addEventListener("change", function(event) {
+            const fileNameDisplay = document.getElementById("selected-file-name");
+            const file = event.target.files[0];
+            fileNameDisplay.textContent = file ? file.name : "";
+        });
+    </script>
 
     <form action="{{ route('account.update') }}" method="POST">
         @csrf
@@ -32,6 +40,8 @@
 
         <label for="name">名前</label>
         <input type="text" name="name" id="name" value="{{ old('name', $user->name) }}" autocomplete="name">
+        <label for="bio">ひとこと</label>
+        <input type="text" name="bio" id="bio" value="{{ auth()->user()->bio->bio ?? '' }}" maxlength="255">
 
         @php
             $strengthLabels = [

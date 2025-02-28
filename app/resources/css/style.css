@@ -614,8 +614,14 @@ input[name="user_id"] {
 }
 
 .current-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平方向の中央揃え */
+    justify-content: center; /* 垂直方向の中央揃え（高さがある場合） */
     margin-bottom: 15px;
+    text-align: center; /* テキスト（ファイル名）の中央揃え */
 }
+
 
 label {
     display: block;
@@ -691,4 +697,10 @@ label {
 
 .custom-file-label:hover {
     background-color: #e9ecef;
+}
+
+.file-name-display {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #555;
 }

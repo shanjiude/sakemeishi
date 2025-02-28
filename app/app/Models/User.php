@@ -86,4 +86,9 @@ class User extends Authenticatable
     {
         return $this->friends()->where('friend_id', $userId)->exists();
     }
+
+    public function bio()
+    {
+        return $this->hasOne(UserBio::class);
+    }
 }

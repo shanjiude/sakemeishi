@@ -46,6 +46,7 @@ class AccountController extends Controller
 
         $request->validate([
             'name' => 'required|string|max:255',
+            'bio' => 'nullable|string|max:255',
             'alcohol_strength' => 'required|integer|min:0|max:5',
             'soda_preference' => 'required|in:可,不可',
             'alcohol_preferences' => 'array',
@@ -53,6 +54,12 @@ class AccountController extends Controller
 
         // usersテーブルの情報を更新
         $user->update(['name' => $request->name]);
+
+        // 一言プロフィールを更新（user_biosテーブル）
+        $user->bio()->updateOrCreate(
+            ['user_id' => $user->id],
+            ['bio' => $request->bio]
+        );
 
         // お酒の強さを更新
         $user->alcoholStrength()->updateOrCreate(

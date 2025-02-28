@@ -36,6 +36,7 @@
                 <p>お酒の強さ: 登録されていません</p>
             @endif
             <p>炭酸の好み: {{ $user->sodaPreference->soda_preference ?? '登録されていません'  }}</p>
+            <p>ひとこと: {{ $user->bio->bio ?? '未設定' }}</p>
         </div>
         </div>
     </div>
