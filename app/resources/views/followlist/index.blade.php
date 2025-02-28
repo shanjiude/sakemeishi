@@ -46,7 +46,7 @@
         </ul>
         @endif
     </div>
-    <div class="return-top">
+    <div class="button-container">
         <a href="{{ route('account') }}" class="">プロフィールに戻る</a>
     </div>
 </div>
