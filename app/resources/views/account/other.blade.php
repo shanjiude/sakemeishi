@@ -85,6 +85,9 @@
             <a href="{{ route('followlist.index') }}">知り合い一覧へ</a>
         </div>
         <div class="top-back">
+            <a href="{{ route('account.search') }}">ID検索へ</a>
+        </div>
+        <div class="top-back">
             <a href="{{ route('account') }}">戻る</a>
         </div>
     </div>
