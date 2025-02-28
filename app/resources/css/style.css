@@ -416,6 +416,7 @@ input[name="user_id"] {
     display: flex;
     justify-content: center; /* 水平方向の中央揃え */
     align-items: center; /* 垂直方向の中央揃え */
+    width: 200px;
 }
 
 
@@ -505,8 +506,8 @@ input[name="user_id"] {
 }
 
 /* 「未設定」のスタイル */
-.follow-favorite-drinks p {
-    /* color: #888; */
+.no-pref {
+    color: #888;
     font-style: italic;
 }
 
