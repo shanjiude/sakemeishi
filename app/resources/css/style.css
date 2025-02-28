@@ -12,6 +12,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
     position: relative; /* メニューの絶対配置のため */
+
 }
 
 .hd-logo h1 {
@@ -21,6 +22,7 @@ body {
     margin: 0;
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
 }
 
 .hd-logo a {
@@ -56,43 +58,54 @@ body {
     position: absolute;
     right: 20px;
     top: 20px;
+    opacity: 0.8;
 } /* メニューを右上に配置 */
 
 .hamburger-btn {
-    background: #333;
-    color: white;
-    padding: 10px;
+    background: transparent;
     border: none;
+    color: white;
+    text-shadow:2px 2px 4px rgba(0, 0, 0, 1);
+    font-size: 30px;
     cursor: pointer;
-    font-size: 18px;
-    width: auto;
-    text-align: center;
-} /* 幅を100%からautoに修正して、ボタンが大きくなりすぎないように調整 */
-
-.profile-menu {
-    background: #f9f9f9;
-    border: 1px solid #ccc;
-    position: absolute;
-    right: 0; /* メニューが右側に開くように調整 */
-    width: 200px;
-    display: none;
-    flex-direction: column;
-    z-index: 1000;
+    padding: 10px;
+    transition: transform 0.3s ease, color 0.3s ease; /* アニメーション効果 */
+    position: relative;
+    z-index: 1001;
+}
+.hamburger-btn:hover {
+    color: #ff6347; /* ボタンがホバーされたときに色を変更 */
+    transform: scale(1.1); /* ホバー時に少し拡大 */
 }
 
 .profile-menu a {
-    padding: 10px;
+    padding: 15px;
     display: block;
     text-decoration: none;
-    color: black;
+    color: #fff;
+    font-size: 16px;
+    transition: background 0.3s ease, color 0.3s ease;
+    border-bottom: 1px solid #444;
 }
 
 .profile-menu a:hover {
-    background: #ddd;
+    background: #ff6347;
+    color: #fff;
+}
+.profile-menu {
+    background: rgba(243, 166, 85, 0.8); /* 半透明な背景 */
+    border: 1px solid #333;
+    position: absolute;
+    right: 0;
+    width: 200px;
+    display: block;  /* 初期状態で表示される */
+    flex-direction: column;
+    z-index: 1000;
+    border-radius: 5px;
 }
 
 .hidden {
-    display: none;
+    display: none ;/* hiddenクラスが適用されると非表示になる */
 }
 /**********************************************************************/
 
