@@ -26,7 +26,8 @@ body {
 
     .hamburger-menu {
         align-items: center; /* ハンバーガーメニューの中身を縦に中央揃え */
-        height: 70px; /* 高さを合わせる */
+        top: auto; /* topを無効化 */
+        position: static; /* 必要ならabsoluteを解除 */
     }
 }
 
