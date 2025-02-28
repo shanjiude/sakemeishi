@@ -7,4 +7,28 @@
                 </a>
             </h1>
         </div>
+        <div class="hamburger-menu" style="position: absolute; right: 20px; top: 20px;"> <!-- 右上に配置 -->
+                <!-- HTML -->
+                <button class="hamburger-btn">
+                    &#9776; メニュー
+                </button>
+
+                <div id="profileMenu" class="profile-menu hidden">
+                    <div class="profile-edit">
+                        <a href="{{ route('account.edit') }}">プロフィール編集</a>
+                    </div>
+                    <div class="ID-search">
+                        <a href="{{ route('account.search') }}">ID検索</a>
+                    </div>
+                    <div class="ID-search">
+                        <a href="{{ route('rakuten.search') }}">最近飲んだお酒の登録</a>
+                    </div>
+                    <div class="go-followlist">
+                        <a href="{{ route('followlist.index') }}">フォロー一覧</a>
+                    </div>
+                </div>
+        </div>
+    </div>
 </header>
+<script src="{{ mix('js/app.js') }}"></script>
+
