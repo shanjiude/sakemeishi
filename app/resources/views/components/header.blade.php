@@ -30,7 +30,3 @@
         </div>
     </div>
 </header>
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
