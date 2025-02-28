@@ -58,7 +58,7 @@ body {
     position: absolute;
     right: 20px;
     top: 20px;
-    opacity: 0.8;
+    opacity: 1;
 } /* メニューを右上に配置 */
 
 .hamburger-btn {

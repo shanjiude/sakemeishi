@@ -25,7 +25,6 @@ body {
     }
 
     .hamburger-menu {
-        display: flex;
         align-items: center; /* ハンバーガーメニューの中身を縦に中央揃え */
         height: 70px; /* 高さを合わせる */
     }

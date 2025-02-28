@@ -14,6 +14,9 @@
                 </button>
 
                 <div id="profileMenu" class="profile-menu hidden">
+                    <div class="hb-go-myprofile">
+                        <a href="{{ route('account') }}">プロフィール</a>
+                    </div>
                     <div class="hb-profile-edit">
                         <a href="{{ route('account.edit') }}">プロフィール編集</a>
                     </div>
