@@ -10,3 +10,24 @@ body {
         display: none;
     }
 }
+/************************************ヘッダー*****************************************************/
+@media screen and (max-width: 600px) {
+    #Hd {
+        height: 90px;
+        display: flex;
+        align-items: center; /* 中央揃え */
+        justify-content: space-between; /* 左右に要素を配置 */
+    }
+
+    .hd-logo h1 {
+        margin: 0; /* マージンをリセットして高さを揃える */
+        line-height: 70px; /* テキストの高さを調整して中央揃え */
+    }
+
+    .hamburger-menu {
+        display: flex;
+        align-items: center; /* ハンバーガーメニューの中身を縦に中央揃え */
+        height: 70px; /* 高さを合わせる */
+    }
+}
+
