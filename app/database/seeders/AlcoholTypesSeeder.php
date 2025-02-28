@@ -21,6 +21,7 @@ class AlcoholTypesSeeder extends Seeder
             ['name' => '赤ワイン', 'image_path' => 'wine.png'],
             ['name' => '白ワイン', 'image_path' => 'white_wine.png'],
             ['name' => 'チューハイ', 'image_path' => 'chuhai.png'],
+            ['name' => 'カクテル', 'image_path' => 'cocktail.png'],
         ];
 
         foreach ($alcohols as $alcohol) {
