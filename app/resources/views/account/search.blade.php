@@ -15,7 +15,7 @@
         <div class="search-result-container">
             <a href="{{ route('account.showOther', $user->id) }}" class="search-result">
                 <img src="{{ asset('images/' . ($user->icon_path ?? 'default_icon.png')) }}" alt="User Icon" class="profile-icon">
-                <p>{{ $user->name }}</p>
+                <p class="font-bold">{{ $user->name }}</p>
             </a>
             <div class="follow-container">
                 <button id="follow-btn"

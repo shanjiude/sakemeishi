@@ -10,7 +10,7 @@
         <div class="user-head">
             <div class="user-icon-container flex flex-col items-center">
                 <img src="{{ asset($user->profile_picture ?? 'images/default_icon.png') }}" alt="User Icon" class="profile-icon">
-                <h2 class="user-name">{{ $user->name }}</h2>
+                <h2 class="user-name font-bold">{{ $user->name }}</h2>
             </div>
         </div>
         <div class="user-others">
