@@ -5,11 +5,7 @@ body {
 }
 
 /******************************フォロー一覧*****************************/
-@media screen and (max-width: 600px) {
-    .drink-block:nth-child(n+2) {  /* 2つ目以降を非表示 */
-        display: none;
-    }
-}
+
 /************************************ヘッダー*****************************************************/
 @media screen and (max-width: 600px) {
     #Hd {
@@ -44,6 +40,8 @@ body {
         height: 50px;
         border-radius: 50%; /* 丸いアイコンに（任意） */
     }
-
+.pref-drink-label{
+    display: none;
+}
 }
 
