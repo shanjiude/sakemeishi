@@ -1,5 +1,5 @@
 <header>
-    <div id="Hd">
+    <div id="Hd" style="background: url('{{ asset('images/osakeheader.jpg') }}') no-repeat center center; background-size: cover;">
         <div class="hd-logo">
             <h1>
                 <a href="{{ route('home') }}">
