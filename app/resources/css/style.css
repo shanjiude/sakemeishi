@@ -569,13 +569,11 @@ input[name="user_id"] {
 .drink-wrapper{
     display: flex;
     gap: 15px;
-    /* flex-wrap: wrap; */
     margin-left: 10px; /* お酒のアイコンと文字の間隔 */
 }
 
 .pref-drink-list {
     display: flex;
-    /* flex-wrap: wrap; */
     align-items: center;
 }
 

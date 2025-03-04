@@ -5,12 +5,12 @@ body {
 }
 
 /******************************フォロー一覧*****************************/
+/* 4つ目以降を非表示 */
 @media screen and (max-width: 600px) {
     .drink-block:nth-child(n+4) {
         display: none;
     }
 }
-/* 2つ目以降を非表示 */
 /************************************ヘッダー*****************************************************/
 @media screen and (max-width: 600px) {
     #Hd {
@@ -45,8 +45,8 @@ body {
         height: 50px;
         border-radius: 50%; /* 丸いアイコンに（任意） */
     }
-.pref-drink-label{
-    display: none;
-}
+    .pref-drink-label{
+        display: none;
+    }
 }
 
