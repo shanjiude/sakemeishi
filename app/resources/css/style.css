@@ -235,7 +235,7 @@ label {
 input[type="text"],
 input[type="number"],
 select {
-    width: 100%;
+    width: 70%;
     padding: 8px;
     font-size: 16px;
     border: 1px solid #ccc;

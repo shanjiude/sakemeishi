@@ -48,5 +48,16 @@ body {
     .pref-drink-label{
         display: none;
     }
+    .drink-tags-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .drink-tags-row .drink-option {
+        width: 50%; /* 2つ並ぶようにする */
+        text-align: center;
+    }
 }
+
 
