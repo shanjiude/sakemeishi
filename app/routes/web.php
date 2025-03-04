@@ -25,6 +25,8 @@ Route::post('/follow/{userId}', [FriendController::class, 'toggleFollow'])->name
 
 Route::get('/rakuten', [RakutenController::class, 'search'])->name('rakuten.search');
 Route::post('/rakuten/save', [RakutenController::class, 'saveFavorite'])->name('rakuten.save');
+Route::delete('/rakuten/{drink}', [RakutenController::class, 'destroy'])->name('rakuten.destroy');
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

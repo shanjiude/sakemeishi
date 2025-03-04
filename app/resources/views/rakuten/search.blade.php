@@ -3,7 +3,27 @@
 
 @section('content')
 <div class="container">
-    <h2>楽天市場からお酒を検索</h2>
+    <div class="drink-list">
+        <h3>最近飲んだお酒</h3>
+        <div class="drink-list">
+        <ul>
+            @forelse ($recentDrinks as $drink)
+                <li>
+                    <img src="{{ $drink->image_url ?: asset('images/beer.png') }}" alt="{{ $drink->name }}" class="sake-icon">
+                    <span class="sake-name">{{ $drink->name }}</span>
+                    <form action="{{ route('rakuten.destroy', $drink->id) }}" method="POST" style="display: inline;">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" onclick="return confirm('削除しますか？');" class="delete-btn">削除</button>
+                    </form>
+                </li>
+            @empty
+                <li>登録されていません</li>
+            @endforelse
+        </ul>
+        </div>
+    </div>
+    <h2 class="mt-4">楽天市場からお酒を検索</h2>
 
     <form action="{{ route('rakuten.search') }}" method="GET">
         <input type="text" name="keyword" placeholder="お酒の名前を入力" value="{{ old('keyword') }}" required>
@@ -11,7 +31,6 @@
     </form>
 
     @if(!empty($items))
-        <h3>検索結果</h3>
         <ul>
             @foreach($items as $item)
                 <li class="search-drink-list">

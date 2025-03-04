@@ -11,6 +11,8 @@ class RakutenController extends Controller
 {
     public function search(Request $request)
     {
+        $user = Auth::user();
+        $recentDrinks = $user->favoriteDrinks()->latest()->take(3)->get();
         $apiKey = config('services.rakuten.application_id'); // APIキー取得
         $keyword = $request->input('keyword', ''); // ユーザー入力の検索ワード
 
@@ -37,7 +39,7 @@ class RakutenController extends Controller
         $items2 = $response2->json()['Items'] ?? [];
         $items = array_merge($items1, $items2); // 両方の結果を結合
 
-        return view('rakuten.search', compact('items', 'keyword'));
+        return view('rakuten.search', compact('items', 'keyword', 'recentDrinks'));
     }
 
 
@@ -56,7 +58,18 @@ class RakutenController extends Controller
             'product_url' => $request->product_url,
         ]);
 
-        return redirect()->route('account')->with('success', 'お気に入りに追加しました！');
+        return redirect()->back()->with('success', 'お気に入りに追加しました！');
     }
 
+    public function destroy($id)
+    {
+        $drink = Auth::user()->favoriteDrinks()->find($id);
+
+        if ($drink) {
+            $drink->delete();
+            return redirect()->back()->with('success', '削除しました！');
+        }
+
+        return redirect()->back()->with('error', '削除できませんでした。');
+    }
 }
