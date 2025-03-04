@@ -17,7 +17,6 @@
                     </a>
 
                     @php
-                        // "好き" のお酒だけをフィルタリング
                         $favoriteDrinks = $follow->alcoholPreference->filter(function ($preference) {
                             return $preference->preference === '好き' && $preference->alcoholType;
                         });
