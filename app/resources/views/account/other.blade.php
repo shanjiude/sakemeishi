@@ -86,7 +86,7 @@
         <div class="top-back">
             <a href="{{ route('followlist.index') }}">フォロー一覧へ</a>
         </div>
-        <div class="top-back">
+        <div class="button-container">
             <a href="{{ route('account') }}">戻る</a>
         </div>
     </div>

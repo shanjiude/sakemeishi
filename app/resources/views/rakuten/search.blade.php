@@ -51,7 +51,7 @@
     @endif
 </div>
 <div class="other-container">
-    <div class="top-back">
+    <div class="button-container">
         <a href="{{ route('account') }}">戻る</a>
     </div>
 </div>
