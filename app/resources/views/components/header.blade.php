@@ -7,8 +7,7 @@
                 </a>
             </h1>
         </div>
-        <div class="hamburger-menu" style="position: absolute; right: 20px; top: 20px;"> <!-- 右上に配置 -->
-                <!-- HTML -->
+        <div class="hamburger-menu" style="position: absolute; right: 20px; top: 20px;">
                 <button class="hamburger-btn">
                     &#9776;
                 </button>
@@ -28,6 +27,12 @@
                     </div>
                     <div class="hb-go-followlist">
                         <a href="{{ route('followlist.index') }}">フォロー一覧</a>
+                    </div>
+                    <div class="hb-logout">
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                            <button type="submit">ログアウト</button>
+                        </form>
                     </div>
                 </div>
         </div>

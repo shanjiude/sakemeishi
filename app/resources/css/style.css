@@ -76,7 +76,7 @@ body {
     transform: scale(1.1); /* ホバー時に少し拡大 */
 }
 
-.profile-menu a {
+.profile-menu a, .profile-menu button {
     padding: 15px;
     display: block;
     text-decoration: none;
@@ -84,9 +84,11 @@ body {
     font-size: 16px;
     transition: background 0.3s ease, color 0.3s ease;
     border-bottom: 1px solid #444;
+    width: 100%;
+    background: none;
 }
 
-.profile-menu a:hover {
+.profile-menu a:hover, .profile-menu button:hover {
     background: #ff6347;
     color: #fff;
 }
@@ -235,7 +237,7 @@ label {
 input[type="text"],
 input[type="number"],
 select {
-    width: 70%;
+    width: 100%;
     padding: 8px;
     font-size: 16px;
     border: 1px solid #ccc;
