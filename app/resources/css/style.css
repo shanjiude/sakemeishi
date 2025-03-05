@@ -184,18 +184,30 @@ body {
     align-items: center;
     margin-top: 20px;
 }
-.profile-edit, .ID-search,.go-followlist, .top-back, .search-button {
+.profile-edit, .ID-search, .go-followlist, .top-back, .search-button {
     width: 250px;
     padding: 5px 10px;
     margin: 5px;
     color: white;
-    background: gray;
+    background: rgba(128, 128, 128, 0.6);
     border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    transition: background 0.3s ease, transform 0.2s ease;
 }
-.profile-edit a, .ID-search a,.go-followlist a, .top-back a {
+
+.profile-edit:hover, .ID-search:hover, .go-followlist:hover, .top-back:hover, .search-button:hover {
+    background: rgba(128, 128, 128, 0.8);
+    transform: scale(1.05);
+}
+
+.profile-edit a, .ID-search a, .go-followlist a, .top-back a {
     display: block;
     text-decoration: none;
+    color: inherit;
+    text-align: center;
 }
+
 
 .add-favorite {
     width: 250px;
