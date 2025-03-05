@@ -26,10 +26,10 @@
             </div>
         </div>
     @endif
-</div>
-<div class="other-container">
-    <div class="button-container">
-        <a href="{{ route('account') }}">戻る</a>
+    <div class="other-container">
+        <div class="button-container">
+            <a href="{{ route('account') }}">戻る</a>
+        </div>
     </div>
 </div>
 @endsection
