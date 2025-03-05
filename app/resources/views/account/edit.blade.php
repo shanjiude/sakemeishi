@@ -35,7 +35,7 @@
         });
     </script>
 
-    <form action="{{ route('account.update') }}" method="POST">
+    <form class="profile-form" action="{{ route('account.update') }}" method="POST">
         @csrf
         @method('PATCH')
 
