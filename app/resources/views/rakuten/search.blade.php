@@ -43,7 +43,7 @@
                         <input type="hidden" name="name" value="{{ $item['Item']['itemName'] }}">
                         <input type="hidden" name="image_url" value="{{ $item['Item']['mediumImageUrls'][0]['imageUrl'] }}">
                         <input type="hidden" name="product_url" value="{{ $item['Item']['itemUrl'] }}">
-                        <button type="submit" class="add-favorite">お気に入りに追加</button>
+                        <button type="submit" class="add-favorite">飲んだお酒に追加</button>
                     </form>
                 </li>
             @endforeach
